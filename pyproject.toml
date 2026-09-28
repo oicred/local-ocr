@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grock-ocr"
+version = "0.2.0"
+description = "Local OCR for images and PDFs, with document-type learning for English and Portuguese."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = ["ocr", "pdf", "invoice", "portuguese", "offline"]
+dependencies = [
+    "rapidocr>=3.9.2,<3.10",
+    "onnxruntime>=1.30.0,<1.31",
+    "pypdfium2>=5.13.0,<5.14",
+    "pillow>=12.3.0,<13",
+    "numpy>=2.4.6,<2.5",
+    "fastembed>=0.8.0,<0.9",
+]
+
+[project.scripts]
+grock-ocr = "grock_ocr.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

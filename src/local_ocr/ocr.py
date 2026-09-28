@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from grock_ocr.models import BBox, TextBlock
+from local_ocr.models import BBox, TextBlock
 
 
 class RapidOcrEngine:
@@ -17,7 +17,7 @@ class RapidOcrEngine:
         self._engine = None
 
     def recognize(self, image) -> list[TextBlock]:
-        from grock_ocr.preprocess import prepare_scan
+        from local_ocr.preprocess import prepare_scan
 
         cleaned = prepare_scan(image) if hasattr(image, "convert") else image
         engine = self._load()
@@ -35,7 +35,7 @@ class RapidOcrEngine:
             from rapidocr import EngineType, LangDet, LangRec, ModelType, OCRVersion, RapidOCR
         except ImportError as exc:
             raise ImportError(
-                "rapidocr is required for OCR. Install grock-ocr with its dependencies."
+                "rapidocr is required for OCR. Install local-ocr with its dependencies."
             ) from exc
         params = {
             "Det.engine_type": EngineType.ONNXRUNTIME,

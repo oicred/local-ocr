@@ -1,4 +1,4 @@
-"""Public result types for grock_ocr."""
+"""Public result types for local_ocr."""
 
 from __future__ import annotations
 

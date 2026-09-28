@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "grock-ocr"
+name = "local-ocr"
 version = "0.2.0"
 description = "Local OCR for images and PDFs, with document-type learning for English and Portuguese."
 readme = "README.md"
@@ -20,7 +20,7 @@ dependencies = [
 ]
 
 [project.scripts]
-grock-ocr = "grock_ocr.cli:main"
+local-ocr = "local_ocr.cli:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]

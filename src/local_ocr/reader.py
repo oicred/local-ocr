@@ -5,15 +5,15 @@ from __future__ import annotations
 from collections.abc import Callable, Iterable, Iterator, Mapping
 from pathlib import Path
 
-from grock_ocr.classify import Classification, features_from_pages, match_issuer
-from grock_ocr.embed import FastEmbedder
-from grock_ocr.extract import extract_fields
-from grock_ocr.extract.anchors import build_anchors
-from grock_ocr.ingest import aggregate_source, load_document
-from grock_ocr.models import FieldValue, Page, ReadResult, document_text
-from grock_ocr.ocr import RapidOcrEngine
-from grock_ocr.store import ExampleStore, LearnedExample
-from grock_ocr.textutil import detect_language, first_page_blocks
+from local_ocr.classify import Classification, features_from_pages, match_issuer
+from local_ocr.embed import FastEmbedder
+from local_ocr.extract import extract_fields
+from local_ocr.extract.anchors import build_anchors
+from local_ocr.ingest import aggregate_source, load_document
+from local_ocr.models import FieldValue, Page, ReadResult, document_text
+from local_ocr.ocr import RapidOcrEngine
+from local_ocr.store import ExampleStore, LearnedExample
+from local_ocr.textutil import detect_language, first_page_blocks
 
 Extractor = Callable[[ReadResult], Mapping[str, str | FieldValue]]
 
@@ -21,7 +21,7 @@ Extractor = Callable[[ReadResult], Mapping[str, str | FieldValue]]
 class DocumentReader:
     """Read images and PDFs, classify them, and extract fields.
 
-    Learned templates are stored under ``store_path`` (default ``~/.grock_ocr``).
+    Learned templates are stored under ``store_path`` (default ``~/.local_ocr``).
     Copy that folder, or pass the same path, to reuse them in another project.
     OCR and embedding models load on the first call that needs them.
 
@@ -36,7 +36,7 @@ class DocumentReader:
         embedder=None,
         recognizer=None,
     ) -> None:
-        self.store_path = Path(store_path) if store_path is not None else Path.home() / ".grock_ocr"
+        self.store_path = Path(store_path) if store_path is not None else Path.home() / ".local_ocr"
         self.store = ExampleStore(self.store_path)
         self.embedder = embedder if embedder is not None else FastEmbedder()
         self.recognizer = recognizer if recognizer is not None else RapidOcrEngine()

@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from grock_ocr.extract.generic import labeled_value
-from grock_ocr.models import FieldValue, TextBlock
-from grock_ocr.textutil import fold
+from local_ocr.extract.generic import labeled_value
+from local_ocr.models import FieldValue, TextBlock
+from local_ocr.textutil import fold
 
 STOP = [
     "fornecedor",

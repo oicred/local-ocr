@@ -6,6 +6,6 @@ venv/
 dist/
 build/
 *.egg-info/
-.grock_ocr/
+.local_ocr/
 .env
 .env.*

@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from grock_ocr.classify import (
+from local_ocr.classify import (
     DocumentFeatures,
     coarse_type,
     match_issuer,
 )
-from grock_ocr.store import LearnedExample
-from grock_ocr.textutil import detect_language
+from local_ocr.store import LearnedExample
+from local_ocr.textutil import detect_language
 
 
 def _features(text: str, tokens: list[str], nifs: list[str], layout: list[float] | None = None, embedding=None):

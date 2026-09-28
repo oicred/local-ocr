@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from grock_ocr.extract.accounting import extract_expense_note
-from grock_ocr.extract.anchors import apply_anchors, build_anchors
-from grock_ocr.extract.identity import extract_identity, mrz_check
-from grock_ocr.extract.invoice import extract_invoice
+from local_ocr.extract.accounting import extract_expense_note
+from local_ocr.extract.anchors import apply_anchors, build_anchors
+from local_ocr.extract.identity import extract_identity, mrz_check
+from local_ocr.extract.invoice import extract_invoice
 from tests.helpers import block, page
 
 PT_LINE = (

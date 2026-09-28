@@ -1,4 +1,4 @@
-"""Command-line entry for a copied grock-ocr folder."""
+"""Command-line entry for a copied local-ocr folder."""
 
 from __future__ import annotations
 
@@ -7,10 +7,10 @@ import json
 import sys
 from pathlib import Path
 
-from grock_ocr import __version__
-from grock_ocr.models import ReadResult
-from grock_ocr.reader import DocumentReader
-from grock_ocr.store import SCHEMA_VERSION
+from local_ocr import __version__
+from local_ocr.models import ReadResult
+from local_ocr.reader import DocumentReader
+from local_ocr.store import SCHEMA_VERSION
 
 
 def main(argv: list[str] | None = None, reader_factory=None) -> int:
@@ -31,11 +31,11 @@ def main(argv: list[str] | None = None, reader_factory=None) -> int:
 
 
 def _parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="grock-ocr")
+    parser = argparse.ArgumentParser(prog="local-ocr")
     parser.add_argument(
         "--version",
         action="version",
-        version=f"grock-ocr {__version__} (store schema {SCHEMA_VERSION})",
+        version=f"local-ocr {__version__} (store schema {SCHEMA_VERSION})",
     )
     parser.add_argument("--store", type=Path, default=None, help="folder for learned templates")
     commands = parser.add_subparsers(dest="command", required=True)

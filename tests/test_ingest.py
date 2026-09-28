@@ -4,9 +4,9 @@ from pathlib import Path
 
 import pytest
 
-from grock_ocr.ingest import load_document, needs_ocr
-from grock_ocr.models import BBox, TextBlock
-from grock_ocr.ocr import parse_rapidocr_output
+from local_ocr.ingest import load_document, needs_ocr
+from local_ocr.models import BBox, TextBlock
+from local_ocr.ocr import parse_rapidocr_output
 from tests.helpers import FakeOcr
 from tests.pdf_bytes import blank_pdf, pages_pdf, text_pdf
 

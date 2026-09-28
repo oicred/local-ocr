@@ -1,4 +1,4 @@
-# grock-ocr
+# local-ocr
 
 Local OCR for images and PDFs in English and Portuguese. Other Python projects import it. Text stays on your machine: there is no cloud OCR service and no language model.
 
@@ -13,8 +13,8 @@ A digital PDF uses its text layer. A scan or a photo is read with PP-OCRv5 (Lati
 ## Setup
 
 ```bash
-git clone https://github.com/oicred/grock-ocr.git
-cd grock-ocr
+git clone https://github.com/oicred/local-ocr.git
+cd local-ocr
 ```
 
 From the project folder:
@@ -42,25 +42,25 @@ python -m pip install -e ".[dev]"
 Check the install:
 
 ```bash
-grock-ocr --version
+local-ocr --version
 ```
 
-That prints the package version and the store schema version, for example `grock-ocr 0.2.0 (store schema 1)`.
+That prints the package version and the store schema version, for example `local-ocr 0.2.0 (store schema 1)`.
 
 ## First document
 
 ```bash
-grock-ocr read invoice.pdf
-grock-ocr read annex.pdf --pages
-grock-ocr learn annex.pdf --type invoice --issuer acme --page 2 --field total=45.20
+local-ocr read invoice.pdf
+local-ocr read annex.pdf --pages
+local-ocr learn annex.pdf --type invoice --issuer acme --page 2 --field total=45.20
 ```
 
-`python -m grock_ocr` is the same program. The first `read` or `learn` downloads the OCR model and a small multilingual embedding model into the local cache.
+`python -m local_ocr` is the same program. The first `read` or `learn` downloads the OCR model and a small multilingual embedding model into the local cache.
 
-`--store` chooses where learned templates are saved. The default folder is `~/.grock_ocr` (`%USERPROFILE%\.grock_ocr` on Windows).
+`--store` chooses where learned templates are saved. The default folder is `~/.local_ocr` (`%USERPROFILE%\.local_ocr` on Windows).
 
 ```bash
-grock-ocr --store ./ocr-store read invoice.pdf
+local-ocr --store ./ocr-store read invoice.pdf
 ```
 
 Each command prints JSON with `page`, `doc_type`, `issuer`, and `fields`.
@@ -68,7 +68,7 @@ Each command prints JSON with `page`, `doc_type`, `issuer`, and `fields`.
 ## Python
 
 ```python
-from grock_ocr import DocumentReader
+from local_ocr import DocumentReader
 
 reader = DocumentReader()
 
@@ -111,7 +111,7 @@ Images: png, jpg, jpeg, tiff, webp, bmp. A multipage TIFF is one page per frame.
 Install this package into that project's environment, then point every project at the same store folder. Copy the store folder when you want the learned templates on another machine.
 
 ```python
-from grock_ocr import DocumentReader
+from local_ocr import DocumentReader
 
 reader = DocumentReader(store_path="ocr-store")
 ```

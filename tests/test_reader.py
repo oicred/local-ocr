@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from grock_ocr import DocumentReader, FieldValue
-from grock_ocr.models import ReadResult
+from local_ocr import DocumentReader, FieldValue
+from local_ocr.models import ReadResult
 from tests.helpers import FakeOcr, NoEmbed
 from tests.pdf_bytes import pages_pdf, text_pdf
 

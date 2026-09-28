@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 import unicodedata
 
-from grock_ocr.models import Page, TextBlock
+from local_ocr.models import Page, TextBlock
 
 _ACCENTS = str.maketrans(
     {

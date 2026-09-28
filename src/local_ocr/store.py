@@ -115,8 +115,8 @@ class ExampleStore:
         version = int(row["value"])
         if version > SCHEMA_VERSION:
             raise RuntimeError(
-                f"Store schema {version} is newer than this grock-ocr "
-                f"(schema {SCHEMA_VERSION}). Upgrade grock-ocr before opening this store."
+                f"Store schema {version} is newer than this local-ocr "
+                f"(schema {SCHEMA_VERSION}). Upgrade local-ocr before opening this store."
             )
         if version < SCHEMA_VERSION:
             version = _migrate(conn, version)
@@ -124,7 +124,7 @@ class ExampleStore:
 
 
 def _migrate(conn: sqlite3.Connection, version: int) -> int:
-    """Upgrade a store written by an older grock-ocr. Version 1 is the current layout."""
+    """Upgrade a store written by an older local-ocr. Version 1 is the current layout."""
     if version < 1:
         conn.execute(
             "INSERT INTO meta (key, value) VALUES ('schema_version', ?) "

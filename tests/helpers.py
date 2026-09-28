@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from grock_ocr.models import BBox, Page, TextBlock
+from local_ocr.models import BBox, Page, TextBlock
 
 
 class NoEmbed:

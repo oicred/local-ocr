@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import re
 
-from grock_ocr.models import TextBlock
-from grock_ocr.textutil import fold
+from local_ocr.models import TextBlock
+from local_ocr.textutil import fold
 
 MONEY = re.compile(
     r"(?:€|eur|usd|gbp|£|\$)?\s*\d{1,3}(?:[.\s,]\d{3})*(?:[.,]\d{2})\s*(?:€|eur|usd|gbp|£|\$)?",

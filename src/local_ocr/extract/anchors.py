@@ -5,9 +5,9 @@ from __future__ import annotations
 import re
 from math import hypot
 
-from grock_ocr.extract.generic import extract_by_kind, find_label
-from grock_ocr.models import FieldValue, Page, TextBlock
-from grock_ocr.textutil import fold
+from local_ocr.extract.generic import extract_by_kind, find_label
+from local_ocr.models import FieldValue, Page, TextBlock
+from local_ocr.textutil import fold
 
 FIELD_KIND = {
     "invoice_number": "code",

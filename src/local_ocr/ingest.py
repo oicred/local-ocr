@@ -11,7 +11,7 @@ from pathlib import Path
 
 from PIL import Image, ImageSequence
 
-from grock_ocr.models import BBox, Page, TextBlock
+from local_ocr.models import BBox, Page, TextBlock
 
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp", ".bmp"}
 PDF_SUFFIX = ".pdf"

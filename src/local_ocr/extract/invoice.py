@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import re
 
-from grock_ocr.classify import guess_issuer, issuer_display_name
-from grock_ocr.extract.generic import currency_of, labeled_value
-from grock_ocr.models import FieldValue, TextBlock
-from grock_ocr.textutil import fold
+from local_ocr.classify import guess_issuer, issuer_display_name
+from local_ocr.extract.generic import currency_of, labeled_value
+from local_ocr.models import FieldValue, TextBlock
+from local_ocr.textutil import fold
 
 INVOICE_NUMBER = [
     "numero da fatura",

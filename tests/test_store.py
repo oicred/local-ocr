@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from grock_ocr.store import SCHEMA_VERSION, ExampleStore
+from local_ocr.store import SCHEMA_VERSION, ExampleStore
 
 _EXAMPLES = """
 CREATE TABLE examples (

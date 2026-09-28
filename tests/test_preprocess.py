@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw
 
-from grock_ocr.preprocess import prepare_scan
+from local_ocr.preprocess import prepare_scan
 
 
 def test_prepare_scan_returns_rgb():

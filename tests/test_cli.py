@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from grock_ocr.cli import main
-from grock_ocr.reader import DocumentReader
+from local_ocr.cli import main
+from local_ocr.reader import DocumentReader
 from tests.helpers import FakeOcr, NoEmbed
 from tests.pdf_bytes import pages_pdf
 

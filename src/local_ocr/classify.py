@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from grock_ocr.models import Page
-from grock_ocr.store import LearnedExample
-from grock_ocr.textutil import (
+from local_ocr.models import Page
+from local_ocr.store import LearnedExample
+from local_ocr.textutil import (
     first_page_blocks,
     fold,
     has_mrz,

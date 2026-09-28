@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import re
 
-from grock_ocr.extract.generic import labeled_value
-from grock_ocr.models import FieldValue, TextBlock
+from local_ocr.extract.generic import labeled_value
+from local_ocr.models import FieldValue, TextBlock
 
 NAME = ["nome / name", "full name", "given names", "surname", "apelido", "nome"]
 DOCUMENT = [

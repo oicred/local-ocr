@@ -30,7 +30,7 @@ class FastEmbedder:
             from fastembed import TextEmbedding
         except ImportError as exc:
             raise ImportError(
-                "fastembed is required to learn document types. Install grock-ocr dependencies."
+                "fastembed is required to learn document types. Install local-ocr dependencies."
             ) from exc
         _ensure_model(TextEmbedding)
         self._model = TextEmbedding(model_name=_MODEL_NAME)
